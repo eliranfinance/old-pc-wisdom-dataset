@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Old PC Wisdom record",
+  "type": "object",
+  "required": ["id", "topic", "principle", "safe_modern_form", "verification", "risk_notes", "source_themes", "status"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^pcw-[0-9]{3}$"},
+    "topic": {"type": "string", "minLength": 1},
+    "principle": {"type": "string", "minLength": 1},
+    "safe_modern_form": {"type": "string", "minLength": 1},
+    "verification": {"type": "string", "minLength": 1},
+    "risk_notes": {"type": "string", "minLength": 1},
+    "source_themes": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "status": {"enum": ["durable", "contextual", "excluded"]}
+  },
+  "additionalProperties": false
+}
